@@ -1,7 +1,7 @@
-import Average from "./components/Average";
+import SassComponent from "./components/SassComponent";
 
 const App = () => {
-  return <Average />
+  return <SassComponent />
 };
 
 export default App;
