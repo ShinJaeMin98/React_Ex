@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect, useRef } from "react";
 import MainTitle from "../commons/MainTitle";
 
-const LoginForm = () => {
+const LoginForm = ({ onSubmit, onChange, form, error }) => {
     const { t, i18n } = useTranslation();
     const [language, setLanguage] = useState("한국어");
     // let refUserId = React.createRef(); // 클래스형 컴포넌트 + 함수형 컴포넌트 둘다 사용 가능
@@ -44,7 +44,7 @@ const LoginForm = () => {
                 {t('언어')} : {language}
             </div>
 
-            <form>
+            <form onSubmit={onSubmit}>
                 {/*
                 <input
                 type="text"
@@ -57,9 +57,21 @@ const LoginForm = () => {
                     type="text"
                     name="userId"
                     placeholder={t('아이디')}
+                    onChange={onChange}
+                    value={form.userId}
                     ref={refUserId}
                 />
-                <input type="password" name="userPw" placeholder={t('비밀번호')} />
+                {error.userId && <div>{error.userId}</div>}
+
+                <input 
+                    type="password" 
+                    name="userPw" 
+                    placeholder={t('비밀번호')} 
+                    onChange={onChange}
+                    value={form.userPw}
+                />
+                {error.userPw && <div>{error.userPw}</div>}
+
                 <button type="submit">{t('로그인')}</button>
             </form>
             <button type="button" onClick={handleLanguage} data-lang="ko">
