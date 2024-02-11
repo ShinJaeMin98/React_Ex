@@ -1,4 +1,6 @@
 import { useState, useRef } from "react";
+import { FiXCircle } from 'react-icons/fi';
+import { MdOutlineAddBox } from 'react-icons/md';
 
 const initialForm = {
     id: 0,
@@ -44,6 +46,12 @@ const Schedules = () => {
         setForm({ ...form, [e.currentTarget.name]: e.currentTarget.value });
       };
 
+      const onRemove = (id) => {
+        // filter
+        // const newSchedules = schedules.filter((s) => s.id !== id);
+        setSchedules(schedules.filter((s) => s.id !== id));
+      };
+
     return (
         <>
             <h1>스케줄 등록</h1>
@@ -63,13 +71,15 @@ const Schedules = () => {
           value={form.content}
         />
         <button type="submit">
-          등록하기
+            <MdOutlineAddBox />
         </button>
       </form>
+        <hr/>
             <ul>
                 {schedules.map(s => (
                     <li key={s.id}>
                         {s.date}/{s.content}
+                        <FiXCircle onDoubleClick={() => onRemove(s.id)} />
                     </li>
                 ))}
             </ul>
