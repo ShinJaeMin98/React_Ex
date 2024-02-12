@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    height: 60px;
+    background: skyblue;
+    align-items: center;
+    justify-content: flex-end;
+
+    button {
+        height: 45px;
+        border: 2px solid #000;
+        background: #fff;
+
+        &.on {
+            background: orange;
+        }
+    } 
+}
+
+:global .red {
+    color: red;
+}

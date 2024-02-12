@@ -1,7 +1,7 @@
-import SassComponent from "./components/SassComponent";
+import LoginContainer from "./containers/member/LoginContainer";
 
 const App = () => {
-  return <SassComponent />
+  return <LoginContainer />
 };
 
 export default App;

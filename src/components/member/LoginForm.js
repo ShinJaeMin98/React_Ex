@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next"; 
 import { useState, useEffect, useRef } from "react";
-import MainTitle from "../commons/MainTitle";
+//import MainTitle from "../commons/MainTitle"; 
+import { MainTitle } from "../../components/commons/TitleStyle";
+import { InputText } from "../commons/inputStyle";
 
 const LoginForm = ({ onSubmit, onChange, form, error }) => {
     const { t, i18n } = useTranslation();
@@ -17,7 +19,7 @@ const LoginForm = ({ onSubmit, onChange, form, error }) => {
     //console.log(refUserId.current);
     refUserId.current.focus();
 
-    refTitle.current.printInfo('메세지');
+    //refTitle.current.printInfo('메세지');
   }, []);
 
     /*
@@ -39,7 +41,7 @@ const LoginForm = ({ onSubmit, onChange, form, error }) => {
 
     return (
         <>
-            <MainTitle ref={refTitle}>{t('로그인')}</MainTitle>
+            <MainTitle>{t('로그인')}</MainTitle>
             <div>
                 {t('언어')} : {language}
             </div>
@@ -53,7 +55,7 @@ const LoginForm = ({ onSubmit, onChange, form, error }) => {
                 placeholder={t('아이디')}
                 />
                 */}
-                <input
+                <InputText
                     type="text"
                     name="userId"
                     placeholder={t('아이디')}
@@ -63,7 +65,7 @@ const LoginForm = ({ onSubmit, onChange, form, error }) => {
                 />
                 {error.userId && <div>{error.userId}</div>}
 
-                <input 
+                <InputText 
                     type="password" 
                     name="userPw" 
                     placeholder={t('비밀번호')} 

@@ -1,3 +1,4 @@
+/*
 import { Component } from 'react';
 
 class MainTitle extends Component {
@@ -12,3 +13,4 @@ class MainTitle extends Component {
 }
 
 export default MainTitle;
+*/
