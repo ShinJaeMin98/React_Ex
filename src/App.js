@@ -1,7 +1,7 @@
-import LoginContainer from "./containers/member/LoginContainer";
+import ImmerEx from "./components/ImmerEx";
 
 const App = () => {
-  return <LoginContainer />
+  return <ImmerEx />
 };
 
 export default App;
